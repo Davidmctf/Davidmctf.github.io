@@ -1,0 +1,31 @@
+<p-card>
+    <div class="grid animate__animated animate__fadeIn">
+        <div class="col-12 md:col-5" align="center">
+            <img alt="Card" [src]="getImageUrl(movie.poster_path)" style="width: 22rem" />
+        </div>
+        <div class="col-12 md:col-7 grid align-content-center justify-content-left text-1xl">
+            <div class="card">
+                <h3>{{ movie.title }}</h3>
+                <h4>Sinopsis:</h4>
+                <p>{{ movie.overview }}</p>
+                <p-divider></p-divider>
+                <h4>Calificación:</h4>
+                <p><i class="pi pi-star-fill" style="color: rgb(255, 234, 0);"></i> &nbsp;{{ movie.vote_average }}</p>
+                <p-divider></p-divider>
+                <h4>Generos:</h4>
+                <p-chip *ngFor="let genre of movie.genres" [label]="genre.name" styleClass="mr-2 custom-chip text-xs"></p-chip>
+                <p-divider></p-divider>
+                <h4>Idiomas:</h4>
+                <p-chip *ngFor="let languages of movie.spoken_languages" [label]="languages.name + ' - ' + languages.iso_639_1" styleClass="mr-2 custom-chip text-xs"></p-chip>
+                <p-divider></p-divider>
+                <h4>Productoras</h4>
+                <div class="grid">
+                    <div class="{{ getClassImgProd(movie.production_companies.length,i) }}" align="center" *ngFor="let prod of movie.production_companies;let i = index;" style="background-color:rgba(255, 255, 255,0.1);">
+                        <img alt="Card" [src]="getImageUrl(prod.logo_path)" class="imgLogo" /> <br>
+                        <label for="" style="bottom:0px;">{{prod.name}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-card>

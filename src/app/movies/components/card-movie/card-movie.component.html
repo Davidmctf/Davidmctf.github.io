@@ -1,0 +1,30 @@
+<p-card [header]="movie.title" [subheader]="'Idioma Original: '+movie.original_language" [style]="{ width: '100%', height: '100%'}" class="m-auto mb-auto">
+    <ng-template pTemplate="header">
+        <p-image (onImageError)="onImageError($event)" [src]="urlImg" [preview]="true" alt="Image" [style]="{width:'100%'}">
+            <ng-template pTemplate="indicator">
+                <p class="text-center">
+                    <i class="pi pi-eye"></i><br>
+                    <b>Sinopsis:</b>
+                    <br> {{movie.overview || 'Sin información'}}
+                </p>
+            </ng-template>
+        </p-image>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <ul>
+            <li>
+                <h3><b>Nombre Original:</b></h3> {{movie.original_title}}
+            </li>
+            <li>
+                <h3><b>Fecha de Lanzamiento:</b></h3> {{movie.release_date | date}}
+            </li>
+            <li>
+                <h3><b>Promedio de votos:</b></h3> {{movie.vote_average | number:'1.0-2'}}
+            </li>
+        </ul>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <p-button label="Ver Detalles" icon="pi pi-exclamation-circle" (onClick)="showDetailsMovies(movie.id)"></p-button>
+    </ng-template>
+</p-card>
+<br>

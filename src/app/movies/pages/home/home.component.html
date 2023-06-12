@@ -1,0 +1,18 @@
+<p-card>
+    <div class="grid animate__animated animate__fadeIn">
+        <div class="col-12" align="center">
+            <app-carousel-movies [movies]="top12Movies" class="col-12"></app-carousel-movies>
+        </div>
+        <div class="col-12 grid align-content-center justify-content-center">
+            <div class="col-12">
+                <p-paginator (onPageChange)="onPageChange($event)" [style]="{weitgh: '100%', background:'var(--surface-b)'}" [first]="firstPageHeader" [rows]="1" [totalRecords]="totalPages" [pageLinkSize]="3" [showJumpToPageInput]="true" [showCurrentPageReport]="true"></p-paginator>
+            </div>
+            <div class="col-12 flex flex-wrap">
+                <app-card-movie class="col-12 md:col-4" *ngFor="let movie of movies" [movie]="movie"></app-card-movie>
+            </div>
+            <div class="col-12">
+                <p-paginator (onPageChange)="onPageChange($event)" [style]="{weitgh: '100%', background:'var(--surface-b)'}" [first]="firstPageFooter" [rows]="1" [totalRecords]="totalPages" [pageLinkSize]="3" [showJumpToPageInput]="true" [showCurrentPageReport]="true"></p-paginator>
+            </div>
+        </div>
+    </div>
+</p-card>

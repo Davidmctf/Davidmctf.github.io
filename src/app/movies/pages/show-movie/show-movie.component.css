@@ -1,0 +1,13 @@
+:host ::ng-deep .p-chip.custom-chip {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+:host ::ng-deep .p-chip.chip-lg {
+    height: 5rem;
+}
+
+.imgLogo {
+    width: 10rem;
+    height: 2.5rem;
+}

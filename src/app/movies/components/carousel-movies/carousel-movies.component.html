@@ -1,0 +1,19 @@
+<div style="width:100%; height: auto">
+    <p-carousel [value]="movies" [numVisible]="3" [numScroll]="3 " [circular]="true" [autoplayInterval]="4500" [responsiveOptions]="responsiveOptions">
+        <ng-template let-movie pTemplate="item ">
+            <div class="product-item ">
+                <div class="product-item-content">
+                    <div class="mb-3 mt-0">
+                        <p-image [src]="getImg(movie)" alt="{{movie.title}}" width="99%" (onImageError)="onImageError($event)" (onShow)="onShowImh(movie)" [preview]="true" [alt]="movie.title"></p-image>
+                    </div>
+                    <div>
+                        <h4 class="mb-2">{{ movie.title }}</h4>
+                        <h6 class="mt-0 mb-3 ">
+                            <i class="pi pi-star-fill" style="color: rgb(205, 190, 90)"></i> {{ 'Calificación: ' + movie.vote_average }}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>

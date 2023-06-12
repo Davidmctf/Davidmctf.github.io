@@ -1,0 +1,16 @@
+:host ::ng-deep .p-chip {
+    font-size: 10px !important;
+}
+
+.fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.layout-footer {
+    padding-left: 10px;
+    padding-right: 10px;
+}
